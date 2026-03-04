@@ -83,3 +83,86 @@ footer {
   color: #666;
   font-size: 0.85rem;
 }
+
+/* Landing page */
+
+.hero {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.logo {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #999;
+  margin-bottom: 0;
+}
+
+.features {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.feature-card {
+  background: #161618;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.feature-card:hover {
+  border-color: #8B5CF6;
+}
+
+.feature-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+
+.feature-card p {
+  color: #aaa;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.cta {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+  color: #fff;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.cta-button:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
