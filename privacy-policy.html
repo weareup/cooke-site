@@ -4,103 +4,149 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — CookE</title>
+  <link rel="icon" href="assets/icon/CookE_Icon_512.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-of-service.html">Terms of Service</a>
-    <a href="delete-account.html">Delete Account</a>
+<body class="page-legal">
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icon/CookE_Icon_512.png" alt="CookE icon" width="36" height="36">
+        CookE
+      </a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#download">Download</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <h1>Privacy Policy</h1>
-  <p class="effective-date">Effective date: March 4, 2026</p>
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="effective-date">Effective date: March 4, 2026</p>
 
-  <p>CookE ("we", "our", or "us") is an AI-powered cooking assistant. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+    <p>CookE ("we", "our", or "us") is an AI-powered cooking assistant. This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
 
-  <h2>1. Information We Collect</h2>
+    <h2>1. Information We Collect</h2>
 
-  <h3>Account Information</h3>
-  <p>When you sign in with Google, we receive your:</p>
-  <ul>
-    <li>Name</li>
-    <li>Email address</li>
-    <li>Google account ID</li>
-    <li>Profile photo URL</li>
-  </ul>
+    <h3>Account Information</h3>
+    <p>When you sign in with Google, we receive your:</p>
+    <ul>
+      <li>Name</li>
+      <li>Email address</li>
+      <li>Google account ID</li>
+      <li>Profile photo URL</li>
+    </ul>
 
-  <h3>Photos</h3>
-  <p>When you use the dish identification feature, you may select food photos from your device's photo library. These images are sent to our backend server for processing. We do <strong>not</strong> permanently store your photos — they are used only for the duration of the identification request.</p>
+    <h3>Photos</h3>
+    <p>When you use the dish identification feature, you may select food photos from your device's photo library. These images are sent to our backend server for processing. We do <strong>not</strong> permanently store your photos — they are used only for the duration of the identification request.</p>
 
-  <h3>Text Input</h3>
-  <p>Dish names, descriptions, and follow-up chat messages you provide are sent to our servers for recipe generation and modification.</p>
+    <h3>Text Input</h3>
+    <p>Dish names, descriptions, and follow-up chat messages you provide are sent to our servers for recipe generation and modification.</p>
 
-  <h3>Usage Data</h3>
-  <p>We collect basic usage statistics including:</p>
-  <ul>
-    <li>Number of dish identifications and recipe generations</li>
-    <li>Feature usage patterns</li>
-    <li>Device type and operating system version</li>
-    <li>App version</li>
-  </ul>
+    <h3>Usage Data</h3>
+    <p>We collect basic usage statistics including:</p>
+    <ul>
+      <li>Number of dish identifications and recipe generations</li>
+      <li>Feature usage patterns</li>
+      <li>Device type and operating system version</li>
+      <li>App version</li>
+    </ul>
 
-  <h3>Subscription Information</h3>
-  <p>If you subscribe to CookE Premium, payment processing is handled by Google Play and RevenueCat. We receive subscription status information but do <strong>not</strong> have access to your payment details (credit card number, etc.).</p>
+    <h3>Subscription Information</h3>
+    <p>If you subscribe to CookE Premium, payment processing is handled by Google Play and RevenueCat. We receive subscription status information but do <strong>not</strong> have access to your payment details (credit card number, etc.).</p>
 
-  <h3>On-Device Processing</h3>
-  <p>CookE includes a TensorFlow Lite food classifier that runs entirely on your device. Images processed by this classifier are <strong>not</strong> sent to any server.</p>
+    <h3>On-Device Processing</h3>
+    <p>CookE includes a TensorFlow Lite food classifier that runs entirely on your device. Images processed by this classifier are <strong>not</strong> sent to any server.</p>
 
-  <h2>2. How We Use Your Information</h2>
-  <ul>
-    <li><strong>Dish identification:</strong> Photos and text are sent to our backend and forwarded to OpenAI's API to identify dishes and generate recipes.</li>
-    <li><strong>Recipe generation:</strong> Your input is used to create structured recipes with step-by-step instructions.</li>
-    <li><strong>Usage limits:</strong> We track usage to manage free-tier limits and premium subscriptions.</li>
-    <li><strong>Account management:</strong> Your Google account information is used to authenticate you and maintain your profile.</li>
-    <li><strong>App improvement:</strong> Aggregated, anonymized usage data helps us improve the app.</li>
-  </ul>
+    <h2>2. How We Use Your Information</h2>
+    <ul>
+      <li><strong>Dish identification:</strong> Photos and text are sent to our backend and forwarded to OpenAI's API to identify dishes and generate recipes.</li>
+      <li><strong>Recipe generation:</strong> Your input is used to create structured recipes with step-by-step instructions.</li>
+      <li><strong>Usage limits:</strong> We track usage to manage free-tier limits and premium subscriptions.</li>
+      <li><strong>Account management:</strong> Your Google account information is used to authenticate you and maintain your profile.</li>
+      <li><strong>App improvement:</strong> Aggregated, anonymized usage data helps us improve the app.</li>
+    </ul>
 
-  <h2>3. Third-Party Services</h2>
-  <p>We use the following third-party services:</p>
-  <ul>
-    <li><strong>OpenAI</strong> — AI-powered dish identification and recipe generation. Your photos and text are sent to OpenAI for processing. See <a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI's Privacy Policy</a>.</li>
-    <li><strong>Google Sign-In</strong> — Authentication. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
-    <li><strong>RevenueCat</strong> — Subscription and payment management. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</li>
-    <li><strong>Amazon Web Services (AWS)</strong> — Cloud infrastructure hosting our backend. See <a href="https://aws.amazon.com/privacy/" target="_blank" rel="noopener">AWS Privacy Policy</a>.</li>
-  </ul>
+    <h2>3. Third-Party Services</h2>
+    <p>We use the following third-party services:</p>
+    <ul>
+      <li><strong>OpenAI</strong> — AI-powered dish identification and recipe generation. Your photos and text are sent to OpenAI for processing. See <a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI's Privacy Policy</a>.</li>
+      <li><strong>Google Sign-In</strong> — Authentication. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+      <li><strong>RevenueCat</strong> — Subscription and payment management. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</li>
+      <li><strong>Amazon Web Services (AWS)</strong> — Cloud infrastructure hosting our backend. See <a href="https://aws.amazon.com/privacy/" target="_blank" rel="noopener">AWS Privacy Policy</a>.</li>
+    </ul>
 
-  <h2>4. Data Storage and Retention</h2>
-  <ul>
-    <li><strong>Local storage:</strong> Recipes, preferences, and authentication tokens are stored on your device using AsyncStorage. This data stays on your device and is not synced to our servers.</li>
-    <li><strong>Usage records:</strong> Usage tracking records (for free-tier limits) are automatically deleted after 48 hours.</li>
-    <li><strong>User profiles:</strong> Your account information is retained until you request account deletion.</li>
-    <li><strong>Photos:</strong> Not permanently stored. Used only during the processing of your request.</li>
-  </ul>
+    <h2>4. Data Storage and Retention</h2>
+    <ul>
+      <li><strong>Local storage:</strong> Recipes, preferences, and authentication tokens are stored on your device using AsyncStorage. This data stays on your device and is not synced to our servers.</li>
+      <li><strong>Usage records:</strong> Usage tracking records (for free-tier limits) are automatically deleted after 48 hours.</li>
+      <li><strong>User profiles:</strong> Your account information is retained until you request account deletion.</li>
+      <li><strong>Photos:</strong> Not permanently stored. Used only during the processing of your request.</li>
+    </ul>
 
-  <h2>5. Your Rights</h2>
-  <p>You have the right to:</p>
-  <ul>
-    <li><strong>Delete your account:</strong> Contact us to request full deletion of your account and associated data.</li>
-    <li><strong>Export your data:</strong> Request a copy of the personal data we hold about you.</li>
-    <li><strong>Revoke Google access:</strong> You can revoke CookE's access to your Google account at any time through your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account settings</a>.</li>
-    <li><strong>Clear local data:</strong> You can clear locally stored recipes and preferences by clearing the app's data or uninstalling it.</li>
-  </ul>
+    <h2>5. Your Rights</h2>
+    <p>You have the right to:</p>
+    <ul>
+      <li><strong>Delete your account:</strong> Contact us to request full deletion of your account and associated data.</li>
+      <li><strong>Export your data:</strong> Request a copy of the personal data we hold about you.</li>
+      <li><strong>Revoke Google access:</strong> You can revoke CookE's access to your Google account at any time through your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account settings</a>.</li>
+      <li><strong>Clear local data:</strong> You can clear locally stored recipes and preferences by clearing the app's data or uninstalling it.</li>
+    </ul>
 
-  <h2>6. Data Security</h2>
-  <p>We use industry-standard security measures to protect your data, including encrypted connections (HTTPS/TLS) for all data transmission between the app, our servers, and third-party services.</p>
+    <h2>6. Data Security</h2>
+    <p>We use industry-standard security measures to protect your data, including encrypted connections (HTTPS/TLS) for all data transmission between the app, our servers, and third-party services.</p>
 
-  <h2>7. Children's Privacy</h2>
-  <p>CookE is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us so we can promptly delete it.</p>
+    <h2>7. Children's Privacy</h2>
+    <p>CookE is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us so we can promptly delete it.</p>
 
-  <h2>8. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the "Effective date" at the top of this page. Your continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of material changes by updating the "Effective date" at the top of this page. Your continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
-  <h2>9. Contact Us</h2>
-  <p>If you have questions about this Privacy Policy or wish to exercise your data rights, contact us at:</p>
-  <p><a href="mailto:gaomri123@gmail.com">gaomri123@gmail.com</a></p>
+    <h2>9. Contact Us</h2>
+    <p>If you have questions about this Privacy Policy or wish to exercise your data rights, contact us at:</p>
+    <p><a href="mailto:gaomri123@gmail.com">gaomri123@gmail.com</a></p>
+  </main>
 
-  <footer>
-    <p>&copy; 2026 CookE. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/icon/CookE_Icon_512.png" alt="CookE" width="28" height="28">
+            CookE
+          </div>
+          <p class="footer-tagline">Your AI-powered cooking companion.</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="delete-account.html">Delete Account</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:gaomri123@gmail.com">gaomri123@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 CookE. All rights reserved.
+      </div>
+    </div>
   </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

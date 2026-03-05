@@ -4,38 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Delete Your Account — CookE</title>
+  <link rel="icon" href="assets/icon/CookE_Icon_512.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-of-service.html">Terms of Service</a>
+<body class="page-legal">
+
+  <nav class="site-nav">
+    <div class="container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/icon/CookE_Icon_512.png" alt="CookE icon" width="36" height="36">
+        CookE
+      </a>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#download">Download</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <h1>Delete Your Account</h1>
-  <p class="effective-date">Last updated: March 5, 2026</p>
+  <main>
+    <h1>Delete Your Account</h1>
+    <p class="effective-date">Last updated: March 5, 2026</p>
 
-  <p>You can permanently delete your CookE account and all associated data directly from within the app.</p>
+    <p>You can permanently delete your CookE account and all associated data directly from within the app.</p>
 
-  <h2>What gets deleted</h2>
-  <ul>
-    <li><strong>Your account</strong> — Your sign-in credentials are removed from our authentication system. You will no longer be able to sign in with the same Google account.</li>
-    <li><strong>Usage history</strong> — All daily usage records stored on our servers are deleted.</li>
-    <li><strong>Profile &amp; preferences</strong> — Your user profile and any server-side preferences are permanently removed.</li>
-    <li><strong>Local device data</strong> — Auth tokens, saved recipes, and dietary preferences stored on your device are cleared. Any remaining local data can be removed by uninstalling the app.</li>
-  </ul>
+    <h2>What gets deleted</h2>
+    <ul>
+      <li><strong>Your account</strong> — Your sign-in credentials are removed from our authentication system. You will no longer be able to sign in with the same Google account.</li>
+      <li><strong>Usage history</strong> — All daily usage records stored on our servers are deleted.</li>
+      <li><strong>Profile &amp; preferences</strong> — Your user profile and any server-side preferences are permanently removed.</li>
+      <li><strong>Local device data</strong> — Auth tokens, saved recipes, and dietary preferences stored on your device are cleared. Any remaining local data can be removed by uninstalling the app.</li>
+    </ul>
 
-  <h2>How to delete your account in the app</h2>
-  <ol>
-    <li>Open the CookE app and sign in with your Google account.</li>
-    <li>Tap your avatar icon in the top-right corner to open your profile.</li>
-    <li>Scroll down and tap <strong>Delete Account</strong>.</li>
-    <li>Confirm the deletion when prompted.</li>
-  </ol>
-  <p>The deletion is immediate and cannot be undone.</p>
+    <h2>How to delete your account in the app</h2>
+    <ol>
+      <li>Open the CookE app and sign in with your Google account.</li>
+      <li>Tap your avatar icon in the top-right corner to open your profile.</li>
+      <li>Scroll down and tap <strong>Delete Account</strong>.</li>
+      <li>Confirm the deletion when prompted.</li>
+    </ol>
+    <p>The deletion is immediate and cannot be undone.</p>
 
-  <h2>Need help?</h2>
-  <p>If you no longer have access to the app and need your account deleted manually, please contact us at <a href="mailto:support@cookeapp.com">support@cookeapp.com</a> with the email address associated with your account and we will process the request within 30 days.</p>
+    <h2>Need help?</h2>
+    <p>If you no longer have access to the app and need your account deleted manually, please contact us at <a href="mailto:gaomri123@gmail.com">gaomri123@gmail.com</a> with the email address associated with your account and we will process the request within 30 days.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/icon/CookE_Icon_512.png" alt="CookE" width="28" height="28">
+            CookE
+          </div>
+          <p class="footer-tagline">Your AI-powered cooking companion.</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="delete-account.html">Delete Account</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:gaomri123@gmail.com">gaomri123@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 CookE. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
