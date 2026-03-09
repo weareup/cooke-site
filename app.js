@@ -60,21 +60,19 @@ document.querySelectorAll('[id$="-open-form"]').forEach((btn) => {
 function handleFormSubmit(form, successEl) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
+    const email = form.querySelector('input[type="email"]').value;
+    const platform = form.querySelector('input[name="platform"]:checked').value;
     try {
-      const res = await fetch(form.action, {
+      await fetch(form.dataset.action, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, platform }),
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        successEl.classList.add('show');
-      } else {
-        alert('Something went wrong. Please try again.');
-      }
+      form.style.display = 'none';
+      successEl.classList.add('show');
     } catch {
-      alert('Network error. Please check your connection and try again.');
+      alert('Something went wrong. Please try again.');
     }
   });
 }
