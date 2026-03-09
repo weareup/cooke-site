@@ -236,6 +236,215 @@ h1, h2, h3 { line-height: 1.25; }
   color: var(--text-light);
 }
 
+/* ===== Early Access Badge ===== */
+.early-access-badge {
+  display: inline-block;
+  background: rgba(74, 175, 181, .12);
+  color: var(--accent-dark);
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(74, 175, 181, .25);
+}
+
+/* ===== Early Access Form ===== */
+.early-access-form {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 480px;
+  margin: 0 auto 1rem;
+}
+
+.early-access-form input[type="email"] {
+  flex: 1;
+  min-width: 220px;
+  padding: .85rem 1.25rem;
+  border: 2px solid rgba(92, 64, 51, .15);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--white);
+  color: var(--text);
+  outline: none;
+  transition: border-color .2s;
+}
+
+.early-access-form input[type="email"]:focus {
+  border-color: var(--accent);
+}
+
+.early-access-form input[type="email"]::placeholder {
+  color: var(--text-light);
+}
+
+/* Dark variant (bottom CTA section) */
+.early-access-form--dark input[type="email"] {
+  background: rgba(255, 255, 255, .15);
+  border-color: rgba(255, 255, 255, .3);
+  color: var(--white);
+}
+
+.early-access-form--dark input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, .6);
+}
+
+.early-access-form--dark input[type="email"]:focus {
+  border-color: var(--white);
+}
+
+/* Success message */
+.form-success {
+  display: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-bottom: 1rem;
+}
+
+.form-success.show {
+  display: block;
+}
+
+.early-access-form--hidden {
+  display: none;
+}
+
+.early-access-form--hidden.open {
+  display: flex;
+}
+
+.form-success--dark {
+  color: var(--white);
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, .85);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Store Badges ===== */
+.store-badges {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.store-badge {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1.2rem;
+  border-radius: var(--radius-sm);
+  background: #1a1a1a;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.store-badge-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.store-badge-label {
+  display: block;
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  opacity: .85;
+}
+
+.store-badge-store {
+  display: block;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.store-badge.faded {
+  opacity: .35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.store-badge.faded.faded--dark {
+  background: rgba(255, 255, 255, .15);
+  opacity: .45;
+}
+
+/* Platform toggle */
+.platform-toggle {
+  display: flex;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: rgba(92, 64, 51, .08);
+  padding: 4px;
+  gap: 2px;
+}
+
+.platform-option {
+  cursor: pointer;
+  margin: 0;
+  flex: 1;
+}
+
+.platform-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.platform-option span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem 1.2rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-light);
+  background: transparent;
+  border-radius: calc(var(--radius-sm) - 3px);
+  transition: background .2s, color .2s;
+  white-space: nowrap;
+}
+
+.platform-option input:checked + span {
+  background: var(--accent);
+  color: var(--white);
+}
+
+/* Dark variant */
+.early-access-form--dark .platform-toggle {
+  background: rgba(255, 255, 255, .1);
+}
+
+.early-access-form--dark .platform-option span {
+  color: rgba(255, 255, 255, .6);
+}
+
+.early-access-form--dark .platform-option input:checked + span {
+  background: var(--white);
+  color: var(--accent-dark);
+}
+
+@media (max-width: 480px) {
+  .early-access-form {
+    flex-direction: column;
+  }
+
+  .early-access-form input[type="email"] {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 /* ===== Feature Showcase ===== */
 .features-showcase { padding: 4rem 0; }
 
@@ -538,4 +747,5 @@ h1, h2, h3 { line-height: 1.25; }
   .hero .description { font-size: 1rem; }
   .feature-text h2 { font-size: 1.6rem; }
   .how-it-works h2, .gallery h2, .download-cta h2 { font-size: 1.75rem; }
+
 }

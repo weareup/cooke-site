@@ -42,3 +42,47 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+
+// "Get Early Access" button reveals form
+document.querySelectorAll('[id$="-open-form"]').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const section = btn.closest('section');
+    const form = section.querySelector('.early-access-form');
+    if (form) {
+      form.classList.add('open');
+      btn.style.display = 'none';
+      form.querySelector('input[type="email"]').focus();
+    }
+  });
+});
+
+// Early access form submission
+function handleFormSubmit(form, successEl) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' },
+      });
+      if (res.ok) {
+        form.style.display = 'none';
+        successEl.classList.add('show');
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      alert('Network error. Please check your connection and try again.');
+    }
+  });
+}
+
+const heroForm = document.getElementById('hero-form');
+const heroSuccess = document.getElementById('hero-success');
+if (heroForm && heroSuccess) handleFormSubmit(heroForm, heroSuccess);
+
+const bottomForm = document.getElementById('bottom-form');
+const bottomSuccess = document.getElementById('bottom-success');
+if (bottomForm && bottomSuccess) handleFormSubmit(bottomForm, bottomSuccess);
