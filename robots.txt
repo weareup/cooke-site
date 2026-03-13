@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://getcooke.app/sitemap.xml

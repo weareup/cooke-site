@@ -603,6 +603,41 @@ h1, h2, h3 { line-height: 1.25; }
   .gallery-scroll .phone-mockup { max-width: 200px; }
 }
 
+/* ===== FAQ Section ===== */
+.faq-section {
+  background: var(--bg-alt);
+  padding: 5rem 0;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.faq-item {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.faq-item h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .faq-section h2 { font-size: 1.75rem; }
+}
+
 /* ===== Download CTA ===== */
 .download-cta {
   background: linear-gradient(135deg, var(--accent), var(--accent-dark));
@@ -746,6 +781,6 @@ h1, h2, h3 { line-height: 1.25; }
   .hero .tagline { font-size: 1.15rem; }
   .hero .description { font-size: 1rem; }
   .feature-text h2 { font-size: 1.6rem; }
-  .how-it-works h2, .gallery h2, .download-cta h2 { font-size: 1.75rem; }
+  .how-it-works h2, .gallery h2, .faq-section h2, .download-cta h2 { font-size: 1.75rem; }
 
 }

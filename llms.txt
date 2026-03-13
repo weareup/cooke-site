@@ -1,0 +1,36 @@
+# CookE - AI Cooking Companion
+
+> CookE is an AI-powered cooking companion mobile app. Make a recipe from anything — upload a food photo, paste a TikTok or Instagram link, share a URL, or just describe what you want to eat. CookE generates a full structured recipe with ingredients, steps, and timing in seconds. Cook solo or together with a partner using color-coded steps.
+
+## Features
+- Make a Recipe from Anything: Upload a photo, paste a TikTok/Instagram/recipe URL, or describe a dish in text. CookE identifies the dish and generates a complete recipe.
+- AI Recipe Generation: Not a recipe database. CookE generates recipes on demand using AI — every recipe includes ingredients with quantities, step-by-step instructions, prep time, and tips.
+- Follow-Up Chat: Modify recipes mid-cooking. Swap ingredients, adjust spice level, scale servings, or handle dietary restrictions without starting over.
+- Cook Together Mode: 2-cook mode assigns each step to Him (blue), Her (pink), or Together (purple). A "meanwhile" connector shows parallel steps so couples finish dinner faster.
+- Step-by-Step Progress Tracking: Check off steps as you go with an ingredient checklist for shopping and prep.
+- Import from TikTok, Instagram, and More: Paste a link from TikTok, Instagram Reels, food blogs, or upload photos of handwritten recipe cards.
+
+## Free Tier (Monthly)
+- 30 dish identifications from photos or text
+- 30 AI recipe generations
+- 40 follow-up chat messages
+- No credit card required
+
+## CookE Pro
+- Unlimited identifications, recipes, and chat
+- Priority support
+- Annual plan saves 33% versus monthly
+
+## Availability
+- Android: Available on Google Play
+- iOS: Coming soon
+
+## About
+CookE was built by Omri Ganor, a software engineer based in Israel, as a solo project to solve his own problem of always cooking the same few dishes.
+
+## Links
+- Homepage: https://getcooke.app/
+- Privacy Policy: https://getcooke.app/privacy-policy.html
+- Terms of Service: https://getcooke.app/terms-of-service.html
+- Contact: hello@getcooke.app
+- Twitter/X: https://x.com/getcooke_app
