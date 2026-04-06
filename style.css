@@ -186,9 +186,10 @@ h1, h2, h3 { line-height: 1.25; }
 
 .hero-ctas {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
   margin-bottom: 1rem;
 }
 
@@ -776,33 +777,11 @@ h1, h2, h3 { line-height: 1.25; }
 }
 
 /* ===== iOS notice & waitlist ===== */
-.hero-ctas {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.ios-waitlist-hero-label {
+.hero-waitlist-label {
   font-size: 1rem;
   color: var(--text-light);
-  margin-bottom: .75rem;
+  margin-bottom: 0;
   text-align: center;
-}
-
-.ios-waitlist-form--hero {
-  background: none;
-  justify-content: center;
-}
-
-.ios-waitlist-form--hero input[type="email"] {
-  background: var(--white);
-  border-color: var(--accent);
-  color: var(--text);
-}
-
-.ios-waitlist-form--hero input[type="email"]::placeholder {
-  color: var(--text-light);
 }
 
 .ios-waitlist-label {
