@@ -833,7 +833,7 @@ h1, h2, h3 { line-height: 1.25; }
 }
 
 .store-listing-img {
-  width: 240px;
+  width: 380px;
   height: auto;
   border-radius: 16px;
   flex-shrink: 0;
@@ -842,7 +842,7 @@ h1, h2, h3 { line-height: 1.25; }
 }
 
 @media (max-width: 640px) {
-  .store-listing-img { width: 200px; }
+  .store-listing-img { width: 280px; }
   .ios-waitlist-form { flex-direction: column; }
 }
 
