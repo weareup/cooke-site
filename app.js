@@ -23,7 +23,6 @@ if (hamburger && navLinks) {
     navLinks.classList.toggle('open');
   });
 
-  // Close menu when a link is tapped
   navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
@@ -32,7 +31,7 @@ if (hamburger && navLinks) {
   });
 }
 
-// Smooth scroll for anchor links (fallback for browsers without CSS scroll-behavior)
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     const target = document.querySelector(anchor.getAttribute('href'));
@@ -43,25 +42,21 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// "Get Early Access" button reveals form
-document.querySelectorAll('[id$="-open-form"]').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const section = btn.closest('section');
-    const form = section.querySelector('.early-access-form');
-    if (form) {
-      form.classList.add('open');
-      btn.style.display = 'none';
-      form.querySelector('input[type="email"]').focus();
-    }
-  });
-});
-
-// Early access form submission
+// Form submission with loading state
 function handleFormSubmit(form, successEl) {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn.disabled) return;
+
     const email = form.querySelector('input[type="email"]').value;
-    const platform = form.querySelector('input[name="platform"]:checked').value;
+    const platformInput = form.querySelector('input[name="platform"]:checked') || form.querySelector('input[name="platform"]');
+    const platform = platformInput ? platformInput.value : 'iOS';
+
+    submitBtn.disabled = true;
+    submitBtn.dataset.originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+
     try {
       await fetch(form.dataset.action, {
         method: 'POST',
@@ -73,14 +68,13 @@ function handleFormSubmit(form, successEl) {
       successEl.classList.add('show');
     } catch {
       alert('Something went wrong. Please try again.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = submitBtn.dataset.originalText;
     }
   });
 }
 
-const heroForm = document.getElementById('hero-form');
-const heroSuccess = document.getElementById('hero-success');
-if (heroForm && heroSuccess) handleFormSubmit(heroForm, heroSuccess);
-
-const bottomForm = document.getElementById('bottom-form');
-const bottomSuccess = document.getElementById('bottom-success');
-if (bottomForm && bottomSuccess) handleFormSubmit(bottomForm, bottomSuccess);
+// iOS waitlist form
+const iosForm = document.getElementById('ios-form');
+const iosSuccess = document.getElementById('ios-success');
+if (iosForm && iosSuccess) handleFormSubmit(iosForm, iosSuccess);
