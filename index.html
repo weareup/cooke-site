@@ -193,7 +193,13 @@
     <p class="tagline">Make a Recipe from Any Photo, Link, or Idea</p>
     <p class="description">Upload a food photo, paste a TikTok or Instagram link, share a URL, or just describe what you want &mdash; CookE generates a full recipe with ingredients, steps, and timing in seconds.</p>
     <div class="hero-ctas">
-      <a href="#ios-waitlist" class="btn btn-primary">Join the iOS Waitlist</a>
+      <p class="ios-waitlist-hero-label">Get notified when CookE launches on iOS</p>
+      <form class="ios-waitlist-form ios-waitlist-form--hero" data-action="https://script.google.com/macros/s/AKfycby9JEBsoLzI1VFVrNOmWcHt-5zb-0W4CGZV7X8S8lZ4A1R89yy1nJ3BYKTUxWFGt2iP/exec" id="hero-ios-form">
+        <input type="email" name="email" placeholder="Your email address" required>
+        <input type="hidden" name="platform" value="iOS">
+        <button type="submit" class="btn btn-primary">Join the Waitlist</button>
+      </form>
+      <p class="form-success" id="hero-ios-success">You're on the list! We'll email you when CookE launches on iOS.</p>
     </div>
     <div class="store-badges">
       <a href="https://play.google.com/store/apps/details?id=com.cooke.app" class="store-badge" target="_blank" rel="noopener">

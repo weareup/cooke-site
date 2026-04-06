@@ -74,7 +74,11 @@ function handleFormSubmit(form, successEl) {
   });
 }
 
-// iOS waitlist form
+// iOS waitlist forms
+const heroIosForm = document.getElementById('hero-ios-form');
+const heroIosSuccess = document.getElementById('hero-ios-success');
+if (heroIosForm && heroIosSuccess) handleFormSubmit(heroIosForm, heroIosSuccess);
+
 const iosForm = document.getElementById('ios-form');
 const iosSuccess = document.getElementById('ios-success');
 if (iosForm && iosSuccess) handleFormSubmit(iosForm, iosSuccess);

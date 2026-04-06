@@ -776,16 +776,24 @@ h1, h2, h3 { line-height: 1.25; }
 }
 
 /* ===== iOS notice & waitlist ===== */
-.ios-notice {
-  font-size: .95rem;
+.ios-waitlist-hero-label {
+  font-size: 1rem;
   color: var(--text-light);
-  margin-top: .75rem;
+  margin-bottom: .5rem;
 }
 
-.ios-link {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: underline;
+.ios-waitlist-form--hero {
+  background: none;
+}
+
+.ios-waitlist-form--hero input[type="email"] {
+  background: var(--white);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.ios-waitlist-form--hero input[type="email"]::placeholder {
+  color: var(--text-light);
 }
 
 .ios-waitlist-label {
