@@ -97,7 +97,7 @@
     (function () {
       var IOS_URL = 'https://apps.apple.com/app/id6760226469';
       var ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.cooke.app';
-      var SCHEME = 'cooke://';
+      var IOS_SCHEME = 'cooke://';
       var FALLBACK_MS = 1500;
 
       var ua = navigator.userAgent || '';
@@ -114,21 +114,32 @@
         return;
       }
 
-      var storeUrl = isIOS ? IOS_URL : ANDROID_URL;
+      if (isAndroid) {
+        // Chrome on Android blocks raw custom-scheme navigation from JS as an
+        // anti-abuse measure. The official way to launch an app from a web
+        // page is the intent:// URI format, which includes the package name
+        // so Chrome can verify + natively handle the "not installed" case
+        // via S.browser_fallback_url. No setTimeout needed — Chrome figures
+        // out whether the app is installed in real time.
+        //
+        // See: https://developer.chrome.com/docs/android/intents/
+        var intentUrl =
+          'intent://home#Intent;' +
+          'scheme=cooke;' +
+          'package=com.cooke.app;' +
+          'S.browser_fallback_url=' + encodeURIComponent(ANDROID_URL) + ';' +
+          'end';
+        window.location.replace(intentUrl);
+        return;
+      }
 
-      // Attempt to open the installed app via the custom scheme. If the app is
-      // installed, the OS switches focus to it and this tab goes into the
-      // background (document.hidden === true).
-      window.location.href = SCHEME;
-
-      // If we're still visible after FALLBACK_MS, the app didn't open —
-      // send the user to their platform's store instead. We check
-      // document.hidden to avoid a nasty edge case: if the app DID open, the
-      // timer still fires when the user returns to the browser later, which
-      // would dump them into the store for no reason.
+      // iOS: Safari is more lenient and accepts JS-initiated custom scheme
+      // navigation. The document.hidden check prevents the fallback timer
+      // from firing after the app successfully took focus.
+      window.location.href = IOS_SCHEME;
       setTimeout(function () {
         if (!document.hidden) {
-          window.location.replace(storeUrl);
+          window.location.replace(IOS_URL);
         }
       }, FALLBACK_MS);
     })();
