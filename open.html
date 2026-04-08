@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening CookE...</title>
+  <meta name="description" content="Opening the CookE app on your device.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/icon/CookE_Icon_512.jpg" type="image/jpeg">
+  <meta name="theme-color" content="#4AAFB5">
+
+  <!--
+    This page is the universal CTA target for CookE marketing emails and
+    transactional messages. A single URL (https://getcooke.app/open) handles
+    every recipient: mobile users get redirected into the app (if installed)
+    or to their platform's store; desktop users get a "use your phone" hint.
+
+    Future upgrade path: add /.well-known/apple-app-site-association and
+    /.well-known/assetlinks.json + entitlements in the mobile app, and
+    iOS/Android will intercept this URL as a Universal Link / App Link BEFORE
+    the browser loads this page — opening the installed app directly. The
+    HTML and JS below become the fallback for the "app not installed" case,
+    which is exactly what we want.
+  -->
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #FFF8F0;
+      color: #5C4033;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px rgba(92, 64, 51, 0.12);
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    p {
+      color: #8B7355;
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 380px;
+    }
+    .spinner {
+      margin-top: 1.75rem;
+      width: 28px;
+      height: 28px;
+      border: 3px solid rgba(74, 175, 181, 0.2);
+      border-top-color: #4AAFB5;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .hidden { display: none; }
+    .desktop-card {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(74, 175, 181, 0.08);
+      border-radius: 12px;
+      max-width: 420px;
+    }
+    .desktop-card a {
+      color: #3A8F94;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .desktop-card a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <img class="logo" src="assets/icon/CookE_Icon_512.jpg" alt="CookE">
+  <h1 id="headline">Opening CookE...</h1>
+  <p id="subtext">One moment while we hand you off to the app.</p>
+  <div class="spinner" id="spinner"></div>
+
+  <div class="desktop-card hidden" id="desktop-card">
+    <p>Open this link on your phone to download CookE, or visit <a href="https://getcooke.app">getcooke.app</a> to learn more.</p>
+  </div>
+
+  <script>
+    (function () {
+      var IOS_URL = 'https://apps.apple.com/app/id6760226469';
+      var ANDROID_URL = 'https://play.google.com/store/apps/details?id=com.cooke.app';
+      var SCHEME = 'cooke://';
+      var FALLBACK_MS = 1500;
+
+      var ua = navigator.userAgent || '';
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isAndroid = /Android/i.test(ua);
+      var isMobile = isIOS || isAndroid;
+
+      if (!isMobile) {
+        // Desktop (or unknown): show a "use your phone" message, no auto-redirect.
+        document.getElementById('headline').textContent = 'CookE is a mobile app';
+        document.getElementById('subtext').classList.add('hidden');
+        document.getElementById('spinner').classList.add('hidden');
+        document.getElementById('desktop-card').classList.remove('hidden');
+        return;
+      }
+
+      var storeUrl = isIOS ? IOS_URL : ANDROID_URL;
+
+      // Attempt to open the installed app via the custom scheme. If the app is
+      // installed, the OS switches focus to it and this tab goes into the
+      // background (document.hidden === true).
+      window.location.href = SCHEME;
+
+      // If we're still visible after FALLBACK_MS, the app didn't open —
+      // send the user to their platform's store instead. We check
+      // document.hidden to avoid a nasty edge case: if the app DID open, the
+      // timer still fires when the user returns to the browser later, which
+      // would dump them into the store for no reason.
+      setTimeout(function () {
+        if (!document.hidden) {
+          window.location.replace(storeUrl);
+        }
+      }, FALLBACK_MS);
+    })();
+  </script>
+</body>
+</html>
