@@ -1,12 +1,17 @@
-/* ===== Design Tokens ===== */
+/* ===== Design Tokens — Saffron Editorial ===== */
 :root {
-  --bg: #FFF8F0;
-  --bg-alt: #F5EDE3;
-  --accent: #4AAFB5;
-  --accent-dark: #3A8F94;
-  --text: #5C4033;
-  --text-light: #8B7355;
-  --white: #ffffff;
+  --bg: #F5EFE1;
+  --bg-alt: #EFE8D8;
+  --surface: #FAF6EF;
+  --accent: #C48A1E;
+  --accent-dark: #A87318;
+  --accent-warm: #C65D3B;
+  --text: #1E1A14;
+  --text-light: #3A3530;
+  --text-muted: #6B6052;
+  --white: #FAF6EF;
+  --border: rgba(30, 26, 20, 0.12);
+  --border-light: rgba(30, 26, 20, 0.06);
   --radius: 16px;
   --radius-sm: 10px;
   --nav-h: 64px;
@@ -32,6 +37,11 @@ a:hover { text-decoration: underline; }
 
 h1, h2, h3 { line-height: 1.25; }
 
+/* Saffron Editorial — serif hero, handwritten accent */
+.hero h1,
+.page-legal main h1 { font-family: 'Fraunces', serif; }
+.accent-text { font-family: 'Caveat', cursive; }
+
 /* ===== Utility ===== */
 .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -50,10 +60,10 @@ h1, h2, h3 { line-height: 1.25; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 248, 240, .85);
+  background: rgba(245, 239, 225, .85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(92, 64, 51, .08);
+  border-bottom: 1px solid var(--border);
   height: var(--nav-h);
 }
 
@@ -118,13 +128,13 @@ h1, h2, h3 { line-height: 1.25; }
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: rgba(255, 248, 240, .97);
+    background: rgba(245, 239, 225, .97);
     backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: center;
     gap: 0;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(92, 64, 51, .1);
+    border-bottom: 1px solid var(--border);
     transform: translateY(-120%);
     transition: transform .3s ease;
   }
@@ -223,14 +233,14 @@ h1, h2, h3 { line-height: 1.25; }
   border: 2px solid var(--accent);
 }
 
-.btn-outline:hover { background: rgba(74, 175, 181, .08); }
+.btn-outline:hover { background: rgba(196, 138, 30, .08); }
 
 .btn-white {
   background: var(--white);
   color: var(--accent-dark);
 }
 
-.btn-white:hover { background: #f0f0f0; }
+.btn-white:hover { background: var(--bg-alt); }
 
 .hero-note {
   font-size: .9rem;
@@ -240,14 +250,14 @@ h1, h2, h3 { line-height: 1.25; }
 /* ===== Early Access Badge ===== */
 .early-access-badge {
   display: inline-block;
-  background: rgba(74, 175, 181, .12);
+  background: rgba(196, 138, 30, .12);
   color: var(--accent-dark);
   font-size: .85rem;
   font-weight: 600;
   padding: .4rem 1rem;
   border-radius: 999px;
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(74, 175, 181, .25);
+  border: 1px solid rgba(196, 138, 30, .25);
 }
 
 /* ===== Early Access Form ===== */
@@ -264,7 +274,7 @@ h1, h2, h3 { line-height: 1.25; }
   flex: 1;
   min-width: 220px;
   padding: .85rem 1.25rem;
-  border: 2px solid rgba(92, 64, 51, .15);
+  border: 2px solid var(--border);
   border-radius: var(--radius-sm);
   font-size: 1rem;
   font-family: inherit;
@@ -342,7 +352,7 @@ h1, h2, h3 { line-height: 1.25; }
   gap: .6rem;
   padding: .6rem 1.2rem;
   border-radius: var(--radius-sm);
-  background: #1a1a1a;
+  background: var(--text);
   color: var(--white);
   text-decoration: none;
 }
@@ -385,7 +395,7 @@ h1, h2, h3 { line-height: 1.25; }
   border-radius: var(--radius-sm);
   overflow: hidden;
   flex-shrink: 0;
-  background: rgba(92, 64, 51, .08);
+  background: var(--border);
   padding: 4px;
   gap: 2px;
 }
@@ -477,7 +487,7 @@ h1, h2, h3 { line-height: 1.25; }
 
 /* Phone mockup */
 .phone-mockup {
-  background: #1a1a1a;
+  background: var(--text);
   border-radius: 32px;
   padding: 10px;
   max-width: 280px;
@@ -592,7 +602,7 @@ h1, h2, h3 { line-height: 1.25; }
 
 .gallery-scroll::-webkit-scrollbar { height: 6px; }
 .gallery-scroll::-webkit-scrollbar-track { background: transparent; }
-.gallery-scroll::-webkit-scrollbar-thumb { background: rgba(92, 64, 51, .2); border-radius: 3px; }
+.gallery-scroll::-webkit-scrollbar-thumb { background: rgba(30, 26, 20, .2); border-radius: 3px; }
 
 .gallery-scroll .phone-mockup {
   flex-shrink: 0;
@@ -715,7 +725,7 @@ h1, h2, h3 { line-height: 1.25; }
 .footer-links a:hover { color: var(--accent-dark); }
 
 .footer-bottom {
-  border-top: 1px solid rgba(92, 64, 51, .1);
+  border-top: 1px solid var(--border);
   padding-top: 1.5rem;
   text-align: center;
   font-size: .85rem;
